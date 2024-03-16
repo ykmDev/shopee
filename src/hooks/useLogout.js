@@ -27,16 +27,16 @@ export default () => {
 
   return () => {
     Swal.fire({
-      title: "အကောင့်ထွက်မည်",
+      title: "If you want to Logout?",
       background: "#fafafa",
-      text: "သေချာပါသလား။",
+      text: "Are you sure?",
       icon: "warning",
       iconColor: "#806331",
       showCancelButton: true,
       confirmButtonColor: "#166534",
       cancelButtonColor: "#991B1B",
-      confirmButtonText: "သေချာပါသည်။",
-      cancelButtonText: "မထွက်သေးပါ။",
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
         handleLogout();

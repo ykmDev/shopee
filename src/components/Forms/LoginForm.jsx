@@ -14,20 +14,20 @@ const LoginForm = ({ form, onSubmit, isLoading }) => {
   }, [form.errors]);
 
   return (
-    <div class="sp-center">
-      <div class="login-blk">
-        <div class="login-logo">
-          <i class="fa-solid fa-store"></i>
+    <div className="sp-center">
+      <div className="login-blk">
+        <div className="login-logo">
+          <i className="fa-solid fa-store"></i>
           <span>Shop</span>
         </div>
-        <div class="login-container">
+        <div className="login-container">
           <form
             id="login-form"
             onSubmit={form.onSubmit((value) => onSubmit(value))}
           >
-            <h2 class="login-ttl">Login</h2>
-            <div class="input-group">
-              <label for="username">Username</label>
+            <h2 className="login-ttl">Login</h2>
+            <div className="input-group">
+              <label htmlFor="username">Username</label>
               <input
                 type="text"
                 id="username"
@@ -36,8 +36,8 @@ const LoginForm = ({ form, onSubmit, isLoading }) => {
                 required
               />
             </div>
-            <div class="input-group">
-              <label for="password">Password</label>
+            <div className="input-group">
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 id="password"

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
 import { paths } from "../routes/path";
 
 const Home = () => {
@@ -544,8 +544,9 @@ const Home = () => {
     });
   };
 
-  console.log("productsData");
-  console.log({});
+  const checkLogin = () => {
+    return <Navigate to="/login" />;
+  };
 
   return (
     <div>
@@ -588,7 +589,7 @@ const Home = () => {
                 <i className="fa-solid fa-user"></i>
               </a>
               <div className="user-dropdown">
-                <button onClick={() => navigate(`/${paths.login}`)}>
+                <button onClick={() => Navigate(`/${paths.login}`)}>
                   Login
                 </button>
                 <a href="">Sign up</a>
@@ -638,7 +639,7 @@ const Home = () => {
             <ul className="product-list">
               {productsData?.products.map((product) => {
                 return (
-                  <li className="item">
+                  <li className="item" key={product.id}>
                     <Link
                       to={`/products/${product.id}`}
                       className="product-item"
@@ -661,7 +662,9 @@ const Home = () => {
                         <div className="price">${product.price}</div>
                       </div>
                     </Link>
-                      <button type="submit" className="add-btn">
+                      <button type="submit" className="add-btn"
+                        onClick={checkLogin}
+                      >
                         Add to cart
                       </button>
                   </li>
