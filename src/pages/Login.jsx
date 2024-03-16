@@ -1,7 +1,6 @@
 import { useForm } from "@mantine/form";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/Forms/LoginForm";
-import axiosInstance from "../axios/axiosInstance";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setUser } from "../features/auth/authSlice";

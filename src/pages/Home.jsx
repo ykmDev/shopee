@@ -1,24 +1,4 @@
 import { useEffect, useState } from "react";
-import axiosInstance from "../axios/axiosInstance";
-import config from "../config/config";
-
-import {
-  keepPreviousData,
-  useQuery,
-  useQueryClient,
-} from "@tanstack/react-query";
-import { paths } from "../routes/path";
-import TableWithData from "../components/TableWithData";
-import useGetUserTitle from "../hooks/useGetUserTitle";
-import * as XLSX from "xlsx";
-import toast from "react-hot-toast";
-import DropdownForTable from "../components/DropdownForTable";
-import moment from "moment/moment";
-import { FaSpinner } from "react-icons/fa";
-import Lottie from "lottie-react";
-import Loading from "../assets/loading.json";
-import { useNavigate } from "react-router-dom";
-import useGetUserType from "../hooks/useGetUserType";
 
 const Home = () => {
   const [productsData, setProductsData] = useState(

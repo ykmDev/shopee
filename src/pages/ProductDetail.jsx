@@ -1,26 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useNavigate, useParams } from "react-router-dom";
-import axiosInstance from "../axios/axiosInstance";
-import Loading from "../assets/loading.json";
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import Lottie from "lottie-react";
-import NoDataUi from "../components/NoDataUi";
-import { Button, Modal } from "flowbite-react";
-import useBanUser from "../hooks/useBanUser";
-import useDeleteUser from "../hooks/useDeleteUser";
-import useApproveUser from "../hooks/useApproveUser";
-import config from "../config/config";
-import { useEffect, useState } from "react";
-import moment from "moment";
-import useGetUserTitle from "../hooks/useGetUserTitle";
-import SmartCardPreview from "../components/SmartCardPreview";
-import { IoTrashBin } from "react-icons/io5";
-import { FaUserAltSlash } from "react-icons/fa";
-import { paths } from "../routes/path";
-import { useSelector } from "react-redux";
-import PageNotFound from "./PageNotFound";
-import useGetBloodTypes from "./../hooks/useGetBloodTypes";
-import useGetUserType from "../hooks/useGetUserType";
 
 
 // const fetchProductDetail = async (id) => {
