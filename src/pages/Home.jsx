@@ -516,31 +516,48 @@ const Home = () => {
   console.log(category);
 
   return (
-      <div id="home" className="sec-mv" style={{marginTop: "200px"}}>
-        <div className="inner">
-          <h1 className="main-ttl">Products</h1>
-          <ul className="product-list">
-            {productsData?.products.map((product) => {
-              return (
-              <li className="item">
-                <a href="#">
-                  <img src={product.images[0]} alt=""/>
-                  <div className="content">
-                    <p className="cat">{product.category}</p>
-                    <h2 className="list-ttl">{product.title}</h2>
-                    <p className="des">{product.description}</p>
-                    <p className="discount">{product.discountPercentage}</p>
-                    <div className="price">{product.price}</div>
-                  </div>
-                </a>
-              </li>
-              )
-            })}
 
-          </ul>
-          <div id="pagination"></div>
+    <div id="home">
+    <div className="sec-mv">
+      <div className="multi-slide">
+        <div className="slide-item">
+          <img src="/images/slider/img_slide01.jpg" alt="" />
         </div>
+        {/* <div className="slide-item">
+          <img src="./images/slider/img_slide02.jpg" alt="" />
+        </div>
+        <div className="slide-item">
+          <img src="./images/slider/img_slide03.jpg" alt="" />
+        </div> */}
       </div>
+    </div>
+    <section className="sec-product">
+      <div className="inner">
+        <h2 className="main-ttl">Product Items</h2>
+        <ul className="product-list">
+        {productsData?.products.map((product) => {
+          return (
+            <li className="item">
+              <a href="#" className="product-item">
+                <div className="product-img"><img src={product.images[0]} alt={product.title} /></div>
+                <p className="cat display-sp"><span>{product.category}</span></p>
+                <div className="content">
+                  <p className="cat display-pc"><span>{product.category}</span></p>
+                  <h3 className="list-ttl">{product.title}</h3>
+                  <p className="des">{product.description}</p>
+                  <p className="discount">{product.discountPercentage}%</p>
+                  <div className="price">${product.price}</div>
+                </div>
+              </a>
+              <button type="submit" className="add-btn">Add to cart</button>
+            </li>
+            )
+            })}
+        </ul>
+        <div id="pagination"></div>
+      </div>
+    </section>
+  </div>
   );
 };
 

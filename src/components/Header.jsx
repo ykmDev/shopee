@@ -1,17 +1,12 @@
 // import icon
-import SidebarItem from "./SidebarItem";
-import { BiAdjust } from "react-icons/bi";
-import { FaUserSlash } from "react-icons/fa";
-import { LuUsers2 } from "react-icons/lu";
-import { IoLogOut } from "react-icons/io5";
-import { MdDashboard } from "react-icons/md";
-import { MdDoorSliding } from "react-icons/md";
 import { useMemo, useRef, useState } from "react";
 import useLogout from "../hooks/useLogout";
+import { useNavigate, NavLink } from "react-router-dom";
 import { paths } from "../routes/path";
-import { SIDERBAR_ITEM } from "../constant";
 
 const Header = () => {
+
+    const navigate = useNavigate();
 
     const [categories, setCategories] = useState(
         [
@@ -37,30 +32,63 @@ const Header = () => {
           "lighting"
         ]
       );
+    
+    const filterProduct = (category) => {
+        console.log("filterProduct");
+        console.log(category);
+    }
 
   const logout = useLogout();
   const menuToggleBtnRef = useRef(null);
   return (
     <header className="header">
-    <div className="main-container">
-      <div className="buy"><a href="#">BUY</a></div>
-      <div className="login-set">
-        <a href="#" className="signup">SIGN UP</a>
-        <a href="./login.html" className="login">LOGIN</a>
+    <div className="inner">
+      <h1 className="header-logo">
+        <a href="index.html"><i className="fa-solid fa-store"></i><span>Shop</span></a>
+      </h1>
+      <nav className="nav-list">
+        <ul>
+          <li>
+            <a href="" className="active">Home</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
+          <li>
+            <a href="">About Us</a>
+          </li>
+        </ul>
+      </nav>
+      <p className="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </p>
+      <div className="content">
+        <div className="cart"><a href=""><i className="fa-solid fa-cart-shopping"></i></a></div>
+        <div className="user">
+          <a href="" className="ico"><i className="fa-solid fa-user"></i></a>
+          <div className="user-dropdown">
+            <button onClick={() => navigate(`/${paths.login}`)}>Login</button>
+            <a href="">Sign up</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div className="search">
-      <input type="text" placeholder="Search..."/>
-      <button type="submit">Search</button>
-    </div>
-    <ul className="category">
-    <li><a href="#">All</a></li>
+    <div className="search-blk inner">
+      <div className="search">
+        <input type="text" placeholder="Search..." />
+        <button type="submit">Search</button>
+      </div>
+      <ul className="cat-blk">
+        <li className="cat-ico"><button>All</button></li>
         {categories.map((category) => {
             return (
-                <li ><a href="#" key={category}>{category}</a></li>
+                <li className="cat-ico"><button onClick={filterProduct(category)}>{category}</button></li>
             )
         })}
-    </ul>
+      </ul>
+    </div>
   </header>
   );
 };

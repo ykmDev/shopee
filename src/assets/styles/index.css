@@ -1,10 +1,5 @@
 @import "reset.css";
-/* @import "_theme.css"; */
-@import "top.css";
+@import "slick.css";
 @import "login.css";
-* {
-  box-sizing: border-box;
-}
-.smartCardKey {
-  width: 232px;
-}
+@import "top.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";

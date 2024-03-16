@@ -1,11 +1,4 @@
 // import icon
-import SidebarItem from "./SidebarItem";
-import { BiAdjust } from "react-icons/bi";
-import { FaUserSlash } from "react-icons/fa";
-import { LuUsers2 } from "react-icons/lu";
-import { IoLogOut } from "react-icons/io5";
-import { MdDashboard } from "react-icons/md";
-import { MdDoorSliding } from "react-icons/md";
 import { useMemo, useRef, useState } from "react";
 import useLogout from "../hooks/useLogout";
 import { paths } from "../routes/path";
@@ -16,8 +9,36 @@ const Footer = () => {
   const menuToggleBtnRef = useRef(null);
   return (
     <footer className="footer">
-      <p>© 2024 Nang Siri Wang. All Rights Reserved.</p>
-    </footer>
+    <div className="inner">
+      <div className="footer-list">
+        <div className="media">
+          <h3 className="footer-ttl">Follow Us</h3>
+          <ul className="media-list">
+            <li className="item"><a href="#" target="_blank"><i className="fa-brands fa-square-facebook"></i><span>Facebook</span></a></li>
+            <li className="item"><a href="#" target="_blank"><i className="fa-brands fa-square-twitter"></i><span>Twitter</span></a></li>
+            <li className="item"><a href="#" target="_blank"><i className="fa-brands fa-line"></i><span>Line</span></a></li>
+          </ul>
+        </div>
+        <div className="about-us">
+          <h3 className="footer-ttl">About Us</h3>
+          <ul className="about-list">
+            <li className="item"><a href="#">Shop Mall</a></li>
+            <li className="item"><a href="#">Sell Center</a></li>
+            <li className="item"><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div className="payment">
+          <h3 className="footer-ttl">Payment</h3>
+          <ul className="pay-list">
+            <li><img src="./images/pay_01.png" alt="" /></li>
+            <li><img src="./images/pay_02.png" alt="" /></li>
+            <li><img src="./images/pay_03.png" alt="" /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p className="copyright">© 2024 NangSiriWann. All Rights Reserved .</p>
+  </footer>
   );
 };
 
