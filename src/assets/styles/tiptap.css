@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;900&display=swap");
+
+.Container {
+  max-width: 700px;
+  margin: auto;
+  font-family: Poppins, sans-serif;
+}
+.public .tiptap {
+  margin: 0 !important;
+  max-width: 100% !important;
+  padding-top: 100px;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.742734593837535) 13%,
+    rgba(251, 251, 251, 0.8379726890756303) 67%
+  );
+  border-radius: 0 0 5px 5px;
+  min-height: 100px;
+}
+/* TitTap Editor Design */
+.tiptap {
+  margin: 0 !important;
+  max-width: 100% !important;
+  padding: 10px;
+  border-top: 1px solid grey;
+  background: white;
+  border-radius: 0 0 5px 5px;
+  min-height: 100px;
+}
+.tiptap:focus {
+  border: none;
+  outline: 1px solid rgb(1, 8, 8);
+}
+
+.tiptap > * + * {
+  margin-top: 0.75em;
+}
+
+.tiptap ul,
+.tiptap ol {
+  padding: 0 2rem;
+}
+
+.tiptap h1,
+.tiptap h2,
+.tiptap h3,
+.tiptap h4,
+.tiptap h5,
+.tiptap h6 {
+  line-height: 1.6;
+}
+
+.tiptap code {
+  background-color: rgba(#616161, 0.1);
+  color: #616161;
+}
+
+.tiptap pre {
+  background: #0d0d0d;
+  color: #fff;
+  font-family: "JetBrainsMono", monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+.tiptap code {
+  color: inherit;
+  padding: 0;
+  background: none;
+  font-size: 0.8rem;
+}
+
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tiptap blockquote {
+  padding-left: 1rem;
+  border-left: 3px solid #999999;
+}
+
+.tiptap hr {
+  border: none;
+  border-top: 3px solid #999999;
+  margin: 2rem 0;
+}
+
+/* ............................ */
+.textEditor {
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+.menuBar {
+  padding-bottom: 5px;
+  background-color: black;
+}
+.menuBar button {
+  background-color: black;
+  color: white;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-top: px;
+}
+.menuBar button:last-child {
+  margin-right: 7px;
+}
+
+.heading3 {
+  font-size: 15px;
+}
+
+button.is-active {
+  background: rgb(197, 197, 197);
+  padding: 2px 3px;
+  border-radius: 2px;
+}
