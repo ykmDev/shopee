@@ -1,22 +1,33 @@
-.login-blk {
-    background-color: #7fbdff;
+.sp-center {
+    margin: 0 auto;
+    background-color: #f6f6f6;
+  }
+  
+  .login-blk {
     display: flex;
-    align-items: center;
     justify-content: space-around;
+    align-items: center;
     height: 100vh;
   }
   
   .login-blk .login-logo {
+    font-size: 40px;
+    font-weight: 700;
     max-width: 300px;
+  }
+  
+  .login-blk .login-logo i {
+    margin-right: 10px;
+    color: #6f9a37;
   }
   
   .login-container {
     width: 100%;
-    max-width: 400px;
-    background-color: #fff;
-    border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 400px;
+    border-radius: 8px;
   }
   
   #login-form {
@@ -24,9 +35,9 @@
   }
   
   .login-blk .login-ttl {
-    font-size: 32px;
     margin-bottom: 20px;
     color: #333;
+    font-size: 32px;
   }
   
   .input-group {
@@ -49,61 +60,78 @@
   button[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
-    color: #fff;
     border: none;
-    border-radius: 4px;
+    background-color: #6f9a37;
+    color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border-radius: 4px;
   }
   
   button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #6f9a37;
   }
   
   /* Responsive Styles */
   @media (max-width: 767px) {
-    .login-blk {
-      display: block;
-      padding: 6.25vw 0;
+    .sp-center {
+      position: relative;
       height: 100vh;
     }
   
-    .login-blk .login-logo {
-      max-width: 31.25vw;
-      margin: 0 auto 6.25vw;
-    }
-    
-    .login-container {
-      max-width: 62.5vw;
+    .login-blk {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 0;
+      height: 50vh;
       margin: 0 auto;
-      border-radius: 1.25vw;
+      padding: 0;
+      transform: translateY(-50%);
+    }
+  
+    .login-blk .login-logo {
+      margin: 0 auto 6.25vw;
+      font-size: 6.25vw;
+      max-width: 31.25vw;
+    }
+  
+    .login-blk .login-logo i {
+      margin-right: 1.563vw;
+      color: #6f9a37;
+    }
+  
+    .login-container {
+      margin: 0 auto;
       padding: 3.125vw;
       box-shadow: 0 0.625vw 1.25vw rgba(0, 0, 0, 0.1);
+      max-width: 62.5vw;
+      border-radius: 1.25vw;
     }
-    
+  
     .login-blk .login-ttl {
-      font-size: 5vw;
       margin-bottom: 3.125vw;
+      font-size: 5vw;
     }
-    
+  
     .input-group {
       margin-bottom: 3.125vw;
     }
-    
+  
     .input-group label {
       margin-bottom: 0.781vw;
     }
-    
+  
     .input-group input {
       padding: 1.563vw;
       border: 0.156vw solid #ccc;
       border-radius: 0.625vw;
     }
-    
+  
     button[type="submit"] {
       padding: 1.563vw;
-      border-radius: 0.625vw;
       transition: background-color 0.3s ease;
+      border-radius: 0.625vw;
     }
   }

@@ -1,8 +1,7 @@
 import React from "react";
-import "flowbite";
 import "https://code.jquery.com/jquery-3.7.1.min.js"
 import "./assets/js/slick.min.js"
-import "./assets/js/common.js"
+// import "./assets/js/common.js"
 import { MantineProvider } from "@mantine/core";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";

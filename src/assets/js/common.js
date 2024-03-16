@@ -1,5 +1,5 @@
 window.onload = function () {
-  adjustMainMargin();
+  // adjustMainMargin();
   paginateList();
 };
 
@@ -118,7 +118,7 @@ function getItemsPerPage() {
 
 // Recalculate margin if window is resized
 window.onresize = function () {
-  adjustMainMargin();
+  // adjustMainMargin();
   paginateList(); // Recalculate pagination on window resize
 };
 

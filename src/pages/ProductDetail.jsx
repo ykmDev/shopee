@@ -1,15 +1,28 @@
 /* eslint-disable react/prop-types */
 import { useNavigate, useParams } from "react-router-dom";
-
-
-// const fetchProductDetail = async (id) => {
-//   const response = await axiosInstance.get(`${config.baseUrl}/products/${id}`);
-//   return response.data;
-// };
+import { useEffect, useState } from "react";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import config from "../config/config";
+import Header from "../components/Header";
 
 const ProductDetail = () => {
   // get id from url
   const { id } = useParams();
+
+  const { isLoading, isError, isPending, error, data } = useQuery({
+    queryKey: [`products/${id}`],
+    queryFn: () => fetchProductDetail(id),
+    placeholderData: keepPreviousData,
+    staleTime: 5000,
+  });
+
+  const fetchProductDetail = async (id) => {
+    const response = await axiosInstance.get(`${config.baseUrl}/products/${id}`);
+    console.log("product detail");
+    console.log(response);
+    setProduct(response);
+    return response;
+  };
 
   const [product, setProduct] = useState(
     {
@@ -32,17 +45,41 @@ const ProductDetail = () => {
   }
   );
 
-  console.log("id");
-  console.log(product);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div>
-      <h1>{product.title}</h1>
-      <p>{product.description}</p>
-      <div>
-        <img src={product.images[0]} alt="" />
+      <Header />
+      <div id="detail" className="top" style={{marginTop: "200px"}}>
+    <section className="sec-detail">
+      <div className="inner">
+        <h2 className="detail-ttl"><span>Detail Item</span></h2>
+        <div className="detail-blk">
+          <div className="detail-img"><img src={product.images[0]} alt="" /></div>
+          <div className="content">
+            <h3 className="item-ttl">{product.title}</h3>
+            <ul className="detail-list">
+              <li>{product.rating}<span>rating</span></li>
+              <li>{product.stock}<span>stock</span></li>
+            </ul>
+            <div className="detail-dis"><small>Discount</small>{product.discountPercentage}%</div>
+            <div className="cmn-detail"><small>Price</small>${product.price}</div>
+            <div className="cmn-detail"><small>Brand</small>{product.brand}</div>
+            <p className="item-des">{product.description}</p>
+            <div className="btn-blk">
+              <button className="cart-btn">Add to cart</button>
+              <button className="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+  </div>
+
     </div>
+
   );
 };
 

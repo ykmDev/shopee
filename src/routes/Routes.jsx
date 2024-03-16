@@ -37,7 +37,7 @@ const Routes = () => {
       children: [
         // Nested routes with content-specific components
         {
-          path: paths.product_detail,
+          path: "/products/:id",
           element: <ProductDetail />,
         },
         // ... other routes
