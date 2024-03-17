@@ -36,7 +36,7 @@ const Header = () => {
     <header className="header">
       <div className="inner">
         <h1 className="header-logo">
-          <a href="index.html">
+          <a href="/">
             <i className="fa-solid fa-store"></i>
             <span>Shop</span>
           </a>
